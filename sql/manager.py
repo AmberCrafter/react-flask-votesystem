@@ -118,7 +118,7 @@ class SQL:
 
         res = []
         for value in memberlist:
-            value['number_vote'] = value['contribution']/meta['converter']
+            value['number_vote'] = np.floor(value['contribution']/meta['converter'])
             res.append(value)
         return res
 
@@ -163,7 +163,7 @@ class SQL:
         
         data = []
         for value in dummy:
-            data.append(list(value)+[value[2]/meta['converter']])
+            data.append(list(value)+[np.floor(value[2]/meta['converter'])])
 
         header = [
             "id","name","contribution","comment",
@@ -223,7 +223,7 @@ class SQL:
         
         data = []
         for value in dummy:
-            data.append(list(value)+[value[2]/meta['converter']])
+            data.append(list(value)+[np.floor(value[2]/meta['converter'])])
 
         header = [
             "id","name","contribution","comment",
