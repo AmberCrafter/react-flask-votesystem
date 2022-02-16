@@ -1,7 +1,7 @@
 import { format } from 'react-string-format';
 
-// const root_path='http://localhost:5000';
-const root_path='';
+const root_path='http://localhost:5000';
+// const root_path='';
 
 export async function get_all_member() {
   let url = "{0}/api/get_all_member";

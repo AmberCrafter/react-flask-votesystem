@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './index.css'
 import StaticTableHeader from './header';
 import StaticTableMember from './member';
+import StaticTableTotal from './total';
 import { sync_all_results } from './scripts';
 
 function sortStaticlist(info) {
@@ -60,6 +61,7 @@ function StaticTable() {
           {/* {staticList.map((staticresult, index)=>{return <StaticTableMember key={'static_member_'+index} staticresult={staticresult}/>;})} */}
           {staticList.sort(sortStaticlist(sortInfo)).map((staticresult, index)=>{return <StaticTableMember key={'static_member_'+index} index={index} staticresult={staticresult}/>;})}
         </div>
+        <StaticTableTotal staticList={staticList}/>
       </div>
     </div>
   )

@@ -20,6 +20,6 @@
 }
 
 .static_table_member_container{
-    height: calc(100vh - 200px);
+    height: calc(100vh - 232px);
     overflow-y: scroll;
 }

@@ -1,5 +1,5 @@
 from flask import Flask, Response,jsonify,request, send_file, send_from_directory,stream_with_context
-# from flask_cors import CORS
+from flask_cors import CORS
 from numpy import isin
 from sql import manager
 from scripts import uploadfile
@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.template_folder = 'frontend/build'
 app.static_folder = 'frontend/build/static'
 app.static_url_path = ''
-# CORS(app)
+CORS(app)
 
 # app.config['JSON_AS_ASCII'] = False
 # app.config['JSONIFY_MIMETYPE'] = "application/json;charset=utf-8"

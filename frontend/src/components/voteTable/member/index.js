@@ -12,7 +12,7 @@ function MemberList() {
       {memberlist.map(function(member,ind){
         if (isEmpty(datalist) | (ind+1>datalist.length)) {
           return <div className="vote_table_member_row" key={'table_row_'+ind}>
-            <div className="vote_table_member_item" key={'table_cell_id_'+ind}>{ind+1}</div>
+            <div className="vote_table_member_item" key={'table_cell_id_'+ind}>{member.id}</div>
             <div className="vote_table_member_item" key={'table_cell_name_'+ind}>{member.name}</div>
             <div className="vote_table_member_item" key={'table_cell_contribution_'+ind}>{member.contribution/10000}</div>
             <div className="vote_table_member_item" key={'table_cell_number_vote_'+ind}>{member.number_vote}</div>
@@ -26,7 +26,7 @@ function MemberList() {
           </div>
         } else {
           return <div className="vote_table_member_row" key={'table_row_'+ind}>
-            <div className="vote_table_member_item" key={'table_cell_id_'+ind}>{ind+1}</div>
+            <div className="vote_table_member_item" key={'table_cell_id_'+ind}>{member.id}</div>
             <div className="vote_table_member_item" key={'table_cell_name_'+ind}>{member.name}</div>
             <div className="vote_table_member_item" key={'table_cell_contribution_'+ind}>{member.contribution/10000}</div>
             <div className="vote_table_member_item" key={'table_cell_number_vote_'+ind}>{member.number_vote}</div>

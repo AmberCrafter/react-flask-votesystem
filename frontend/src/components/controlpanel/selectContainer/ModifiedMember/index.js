@@ -81,7 +81,7 @@ function ModifiedMember() {
         <select className='modified_member_selectdiv_selecter' onChange={(e)=>modifierSelectorHandler(e,setMemberInfo)}>
           <option value={-1}>請選擇人員</option>
           {memberList.map((member, ind) => {
-            return <option value={member.id} key={'modified_member_selectdiv_selecter_' + ind}>{ind+1}. {member.name}</option>
+            return <option value={member.id} key={'modified_member_selectdiv_selecter_' + ind}>{member.id}. {member.name}</option>
           })}
         </select>
         <div className='modified_member_buttondiv'>

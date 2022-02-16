@@ -258,14 +258,14 @@ class SQL:
         query = f'select * from member;'
         self.exe(query)
         member_info = self.fa() # ((id, name, contribution),...)
-        total_contribution = sum([val[2] for val in member_info])
+        total_contribution = sum([np.floor(val[2]/meta['converter']) for val in member_info])
         
         # setup member map
         member_map = {f'{index}': {
             'name': name, 
             'contribution': contribution, 
             'number_vote': np.floor(contribution/meta['converter']), 
-            'ratio': contribution/total_contribution, 
+            'ratio': np.floor(contribution/meta['converter'])/total_contribution, 
             'voted': 0, 
             'number_voted': 0, 
             'rank': 0
