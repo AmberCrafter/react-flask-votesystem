@@ -1,0 +1,46 @@
+.metacard_container {
+    border: 1px solid black;
+    border-radius: 5px;
+    float: left;
+    min-width: 350px;
+    height: 50px;
+    margin: 5px;
+    position: relative;
+    background-color: lightgray;
+}
+
+.metacard_container:hover {
+    background-color: lightyellow;
+}
+
+.metacard_container:hover .metacard_body{
+    background-color: lightyellow;
+}
+
+.metacard_header {
+    margin: 0;
+    position: absolute;
+    left: 2%;
+    top: 50%;
+    
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.metacard_body {
+    display: table-cell;
+    vertical-align: middle;
+
+    margin: 0;
+    position: absolute;
+    left: 40%;
+    top: 50%;
+    
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    
+    border-radius: 5px;
+    width: 50%;
+    background-color: white;
+    padding: 5px 5px 5px 10px;
+}

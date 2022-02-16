@@ -1,0 +1,16 @@
+.static_table_header {
+    display: grid;
+    grid-template-columns: 0.5fr 0.8fr 1.4fr 0.8fr 0.5fr 1fr+17px;
+}
+
+.static_table_header > div {
+    font-weight: bolder;
+    text-align: center;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    background-color: lightskyblue;
+}
+
+.static_table_header > div:hover {
+    background-color: rgb(46, 192, 250);
+}

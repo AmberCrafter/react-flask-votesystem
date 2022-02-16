@@ -1,0 +1,13 @@
+.vote_table_header_container {
+    text-align: center;
+    min-width: 1370px; 
+}
+
+.vote_table_header_item {
+    width: 120px;
+    height: 25px;
+    float: left;
+    font-size: large;
+    font-weight: bold;
+    border: black solid 1px;
+}

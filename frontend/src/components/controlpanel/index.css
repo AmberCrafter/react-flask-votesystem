@@ -1,0 +1,18 @@
+.selectBar {
+    background-color: lightgrey;
+    width: 150px;
+    height: calc(100vh - 95px);
+    border-radius: 10px;
+    padding: 5px;
+    float: left;
+}
+.barItem {
+    width: 144px;
+    margin: 5px 0px 0px 2px;
+    border-radius: 5px;
+    font-size: larger;
+}
+
+.barItem:hover {
+    background-color: lightyellow;
+}

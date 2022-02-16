@@ -1,0 +1,67 @@
+.new_member_container {
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 0px 0 0 10px;
+    float: left;
+    font-size: 25px;
+    font-weight: bolder;
+    width: calc(100vw - 190px);
+    height: calc(100vh - 90px);
+}
+
+.new_member_item {
+    margin: 20px;
+}
+
+.new_member_item_name {
+    width: 150px;
+    float: left;
+}
+
+.new_member_item_input {
+    font-size: 25px;
+}
+
+.new_member_submit {
+    margin: 20px 5px 85px 0;
+}
+
+.new_member_submit_input {
+    float: right;
+    font-size: 25px;
+    border-radius: 5px;
+}
+
+.new_member_submit_input:hover {
+    background-color: lightyellow;
+}
+
+.upload_file_container{
+    margin: 0 5px 0 20px;
+}
+
+.upload_file_member_input{
+    font-size: large;
+}
+
+.upload_file_member_input:hover {
+    background-color: lightyellow;
+}
+
+.upload_member_submit_input {
+    float: right;
+    font-size: 25px;
+    border-radius: 5px;
+}
+
+.upload_member_submit_input:hover {
+    background-color: lightyellow;
+}
+
+.upload_file_template {
+    float: right;
+}
+
+.upload_file_template_button {
+    font-size: large;
+}

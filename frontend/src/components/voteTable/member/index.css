@@ -1,0 +1,13 @@
+.vote_table_member_container {
+    text-align: center;
+    width: 1370px; 
+    clear: none;
+}
+
+.vote_table_member_item {
+    width: 120px;
+    height: 25px;
+    float: left;
+    font-size: large;
+    border: black solid 1px;
+}

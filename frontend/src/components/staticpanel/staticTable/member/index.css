@@ -1,0 +1,11 @@
+.static_table_member {
+    display: grid;
+    grid-template-columns: 0.5fr 0.8fr 1.4fr 0.8fr 0.5fr 1fr;
+}
+
+.static_table_member > div {
+    font-weight: normal;
+    text-align: center;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+}
