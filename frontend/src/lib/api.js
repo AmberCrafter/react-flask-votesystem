@@ -1,33 +1,42 @@
 import { format } from 'react-string-format';
 
+// const root_path='http://localhost:5000';
+const root_path='';
+
 export async function get_all_member() {
+  let url = "{0}/api/get_all_member";
+  url = format(url, root_path);
   return await fetch(
-    'http://localhost:5000/api/get_all_member'
+    url
   ).then(data => data.json())
 }
 
 export async function get_all_data() {
+  let url = "{0}/api/get_all_data";
+  url = format(url, root_path);
   return await fetch(
-    'http://localhost:5000/api/get_all_data'
+    url
   ).then(data => data.json())
 }
 
 export async function get_meta() {
+  let url = "{0}/api/get_meta";
+  url = format(url, root_path);
   return await fetch(
-    'http://localhost:5000/api/get_meta'
+    url
   ).then(data => data.json())
 }
 
 
 export async function get_id_data(id) {
-  let url = 'http://localhost:5000/api/get_id_data?id={0}';
-  url = format(url, id);
+  let url = "{0}/api/get_id_data?id={1}";
+  url = format(url, root_path, id);
   return await fetch(url).then(data => data.json())
 }
 
 export async function new_member(setter, name, contribution, comment) {
-  let url = 'http://localhost:5000/api/new_member?name={0}&contribution={1}&comment={2}';
-  url = format(url, name, contribution, comment);
+  let url = '{0}/api/new_member?name={1}&contribution={2}&comment={3}';
+  url = format(url, root_path, name, contribution, comment);
   let status = await fetch(url).then(data => data.status);
   setter(status)
   return status;
@@ -37,7 +46,8 @@ export async function upload_member(setter, file) {
   const formData = new FormData();
   formData.append('File', file);
 
-  let url = 'http://localhost:5000/api/upload_member';
+  let url = '{0}/api/upload_member';
+  url = format(url, root_path);
 
   let status = await fetch(
     url,
@@ -51,54 +61,57 @@ export async function upload_member(setter, file) {
 }
 
 export async function update_member(setter, name, contribution, comment) {
-  let url = 'http://localhost:5000/api/update_member_contribution?name={0}&contribution={1}&comment={2}';
-  url = format(url, name, contribution, comment);
+  let url = '{0}/api/update_member_contribution?name={1}&contribution={2}&comment={3}';
+  url = format(url, root_path, name, contribution, comment);
   let status = await fetch(url).then(data => data.status);
   setter(status);
   return status;
 }
 
 export async function update_meta(setter, key, value) {
-  let url = 'http://localhost:5000/api/update_meta?key={0}&value={1}';
-  url = format(url, key, value);
+  let url = '{0}/api/update_meta?key={1}&value={2}';
+  url = format(url, root_path, key, value);
   let status = await fetch(url).then(data => data.status);
   setter(status);
   return status;
 }
 
 export async function delete_member(setter, name) {
-  let url = 'http://localhost:5000/api/delete_member?name={0}';
-  url = format(url, name);
+  let url = '{0}/api/delete_member?name={1}';
+  url = format(url, root_path, name);
   let status = await fetch(url).then(data => data.status);
   setter(status);
   return status;
 }
 
 export async function frash_table(setter, tablename) {
-  let url = 'http://localhost:5000/api/frash_table?tablename={0}';
-  url = format(url, tablename);
+  let url = '{0}/api/frash_table?tablename={1}';
+  url = format(url, root_path, tablename);
   let status = await fetch(url).then(data => data.status);
   setter(status);
   return status;
 }
 
 export async function update_data_vote(setter, name, round, value) {
-  let url = 'http://localhost:5000/api/update_data_vote?name={0}&vote_round={1}&value={2}';
-  url = format(url, name, round, value);
+  let url = '{0}/api/update_data_vote?name={1}&vote_round={2}&value={3}';
+  url = format(url, root_path, name, round, value);
   let status = await fetch(url).then(data => data.status);
   setter(status);
   return status;
 }
 
 export async function get_vote_results() {
+  let url = '{0}/api/get_vote_results';
+  url = format(url, root_path);
   return await fetch(
-    'http://localhost:5000/api/get_vote_results'
+    url
   ).then(data => data.json())
 }
 
 export function get_upload_file_template() {
   // ref: https://stackoverflow.com/questions/51509970/download-file-in-react-client-from-flask-remote-server
-  let url = 'http://localhost:5000/api/download_upload_member_template';
+  let url = '{0}/api/download_upload_member_template';
+  url = format(url, root_path);
 
   fetch(url).then((response) => {
     console.log(response);
@@ -146,7 +159,8 @@ export function get_upload_file_template() {
 // }
 
 export async function clear_database(setter) {
-  let url = 'http://localhost:5000/api/clear_database';
+  let url = '{0}/api/clear_database';
+  url = format(url, root_path);
   let status = await fetch(url).then(data => data.status);
   setter(status)
   return status;
@@ -154,7 +168,8 @@ export async function clear_database(setter) {
 
 export function export_data_asfile() {
   // ref: https://stackoverflow.com/questions/51509970/download-file-in-react-client-from-flask-remote-server
-  let url = 'http://localhost:5000/api/export_data';
+  let url = '{0}/api/export_data';
+  url = format(url, root_path);
 
   fetch(url).then((response) => {
     console.log(response);
