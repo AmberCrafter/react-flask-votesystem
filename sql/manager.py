@@ -1,10 +1,10 @@
 import sqlite3
 import datetime
-from xxlimited import new
 from sql import lib
 # import lib
 from typing import Any
 from operator import itemgetter
+import numpy as np
 
 class SQL:
     '''
@@ -261,7 +261,16 @@ class SQL:
         total_contribution = sum([val[2] for val in member_info])
         
         # setup member map
-        member_map = {f'{index}': {'name': name, 'contribution': contribution, 'number_vote': contribution/meta['converter'], 'ratio': contribution/total_contribution, 'voted': 0, 'number_voted': 0, 'rank': 0} for (index, name, contribution, comment) in member_info}
+        member_map = {f'{index}': {
+            'name': name, 
+            'contribution': contribution, 
+            'number_vote': np.floor(contribution/meta['converter']), 
+            'ratio': contribution/total_contribution, 
+            'voted': 0, 
+            'number_voted': 0, 
+            'rank': 0
+            } for (index, name, contribution, comment) in member_info
+        }
 
         # calculate gain votes
         # get vote data
@@ -274,10 +283,11 @@ class SQL:
             if isinstance(vote_list, type(None)): continue
             if len(vote_list)==0: continue
             vote_ratio = member_map[f'{id_member}']['ratio']/len(vote_list)
+            vote_number = member_map[f'{id_member}']['number_vote']/len(vote_list)
 
             for target in vote_list:
                 member_map[f'{target}']['voted'] += vote_ratio
-                member_map[f'{target}']['number_voted'] += member_map[f'{id_member}']['number_vote']/len(vote_list)
+                member_map[f'{target}']['number_voted'] += vote_number
         
         # calculate rank of vote
         rank_table = [[key, member_map[key]['voted']] for key in member_map.keys()] #[[id, vote],...]
